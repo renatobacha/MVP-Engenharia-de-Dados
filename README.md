@@ -22,7 +22,7 @@ Este repositório contém a documentação técnica e os scripts ETL do pipeline
 ## 1. Contexto de Negócios e Perguntas
 
 ### 🎯 Problema de Negócio e Contexto
-O *diabetes mellitus* representa um grave desafio para a gestão de saúde pública e suplementar[cite: 1]. Por se tratar de uma condição silenciosa, o acompanhamento tardio gera complicações graves e internações de alto custo. Este projeto visa transformar registros clínicos brutos em inteligência preditiva para identificar perfis de risco e suportar decisões médicas preventivas.
+O *diabetes mellitus* representa um grave desafio para a gestão de saúde pública e suplementar. Por se tratar de uma condição silenciosa, o acompanhamento tardio gera complicações graves e internações de alto custo. Este projeto visa transformar registros clínicos brutos em inteligência preditiva para identificar perfis de risco e suportar decisões médicas preventivas.
 
 ### ❓ Perguntas de Negócio
 1. Qual a taxa de prevalência de diabetes por faixa etária?
