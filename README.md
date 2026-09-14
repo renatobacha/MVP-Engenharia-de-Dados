@@ -42,7 +42,7 @@ O *diabetes mellitus* representa um grave desafio para a gestão de saúde públ
 A carga inicial foi realizada via upload manual do arquivo `.csv` bruto para o ambiente de nuvem do Databricks através da funcionalidade de **Unity Catalog Volumes**.
 
 - **Caminho de Destino no Volume:** `/Volumes/mvp/staging/diabetes/diabetes_risk_prediction_dataset.csv`.
-- **Script de Ingestão:** Ver o notebook [`01_bronze_ingestion.py`](./scripts/01_bronze_ingestion.py) no repositório.
+- **Script de Ingestão:** Ver o notebook (./mvp-03-bronze.ipynb) no repositório.
 
 ---
 
@@ -84,10 +84,10 @@ Foi implementado um modelo dimensional **Snowflake Schema** sob a governança do
 
 O pipeline foi organizado de forma modularizada sob a **Arquitetura Medallion** em notebooks PySpark e SQL separados para garantir governança, rastreabilidade e facilidade de manutenção:
 
-1. **`01_bronze_ingestion.py`:** Leitura da fonte CSV bruta no Volume, adição de metadados de auditoria (`_ingestion_datetime`, `_source_file`) e gravação na tabela Delta `bronze_diabetes_raw`.
-2. **`02_silver_cleaning.py`:** Padronização dos nomes de colunas (*lowercase*), casting explícito de tipos, binarização de categóricas e remoção de duplicatas/nulos, gerando a tabela `silver_diabetes_clean`.
-3. **`03_gold_dimensional.py`:** Criação de colunas derivadas (faixas etárias, classificações clínicas) na `gold_fato_diabetes`.
-4. **`04_snowflake_modeling.sql`:** Script SQL DDL construindo o *Snowflake Schema* com chaves surrogate e relacionamentos.
+1. **`mvp-03-bronze.ipynb`:** Leitura da fonte CSV bruta no Volume, adição de metadados de auditoria (`_ingestion_datetime`, `_source_file`) e gravação na tabela Delta `bronze_diabetes_raw`.
+2. **`mvp-04-silver.ipynb`:** Padronização dos nomes de colunas (*lowercase*), casting explícito de tipos, binarização de categóricas e remoção de duplicatas/nulos, gerando a tabela `silver_diabetes_clean`.
+3. **`mvp-05-gold.ipynb`:** Criação de colunas derivadas (faixas etárias, classificações clínicas) na `gold_fato_diabetes`.
+4. **`mvp-06-snowflake.ipynb`:** Script SQL DDL construindo o *Snowflake Schema* com chaves surrogate e relacionamentos.
 
 ### 🔗 Links para Scripts no Repositório
 - Notebooks PySpark/SQL disponíveis na pasta [`/scripts`](./scripts) deste repositório.
